@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurgin – Synergy Gold Network</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Barlow', sans-serif;
+    }
+    body {
+      background: linear-gradient(to bottom, #111, #1a1a1a);
+      color: #f4f4f4;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #eac34f;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #ccc;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b') no-repeat center center/cover;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      color: #eac34f;
+    }
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+    .section {
+      padding: 4rem 2rem;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #eac34f;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .service {
+      flex: 1 1 300px;
+      padding: 2rem;
+      background: #222;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .service:hover {
+      background: #333;
+    }
+    .service i {
+      font-size: 2.5rem;
+      color: #eac34f;
+      margin-bottom: 1rem;
+    }
+    .contact {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .contact h2 {
+      color: #eac34f;
+    }
+    .contact a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #fff;
+      background: #eac34f;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    footer {
+      padding: 1rem;
+      background: #111;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Aurgin</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>The Origin of Trusted Gold</h1>
+    <p>A Synergy Spheres 3.0 sub-brand, bridging verified buyers with global gold suppliers.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Aurgin</h2>
+    <p style="max-width: 800px; margin: auto; text-align: center; color: #bbb;">Aurgin is a global gold sourcing and brokerage brand, operating under the Synergy Spheres 3.0 umbrella. We specialize in connecting certified buyers with verified gold suppliers (CIF Dubai, LBMA, Dore Bars). We work on a commission basis with full transparency and compliance.</p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <i class="fas fa-coins"></i>
+        <h3>Gold Brokering</h3>
+        <p>We connect serious buyers with bulk suppliers through trusted networks, under verified mandates.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-ship"></i>
+        <h3>CIF Logistics</h3>
+        <p>We assist in coordinating cost, insurance & freight shipments directly to Dubai.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-user-shield"></i>
+        <h3>KYC & Vetting</h3>
+        <p>Every deal is backed by verified buyer proof of funds and validated supplier documents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Connect With Us</h2>
+    <p>Email: connect@aurgin.gold</p>
+    <p>WhatsApp: +971-XXX-XXXXXX</p>
+    <a href="mailto:connect@aurgin.gold">Email Us Now</a>
+  </section>
+
+  <footer>
+    © 2025 Aurgin – A Synergy Spheres 3.0 Brand. All rights reserved.
+  </footer>
+</body>
+</html>
