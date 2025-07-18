@@ -21,177 +21,42 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Barlow', sans-serif;
-    }
-    body {
-      background: linear-gradient(to bottom, #111, #1a1a1a);
-      color: #f4f4f4;
-      overflow-x: hidden;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.7);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    .logo {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #eac34f;
-    }
-    nav {
-      display: flex;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #ccc;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      color: #eac34f;
-      cursor: pointer;
-    }
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Barlow', sans-serif; }
+    body { background: linear-gradient(to bottom, #111, #1a1a1a); color: #f4f4f4; overflow-x: hidden; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 2rem; background-color: rgba(0, 0, 0, 0.7); position: sticky; top: 0; z-index: 999; }
+    .logo { font-size: 2rem; font-weight: 600; color: #eac34f; }
+    nav { display: flex; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #ccc; transition: 0.3s; }
+    nav a:hover { color: #fff; }
+    .menu-toggle { display: none; font-size: 1.5rem; color: #eac34f; cursor: pointer; }
     @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #111;
-        position: absolute;
-        top: 80px;
-        right: 2rem;
-        padding: 1rem;
-        border-radius: 10px;
-      }
-      nav.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
+      nav { display: none; flex-direction: column; background: #111; position: absolute; top: 80px; right: 2rem; padding: 1rem; border-radius: 10px; }
+      nav.active { display: flex; }
+      .menu-toggle { display: block; }
     }
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b') no-repeat center center/cover;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%);
-      animation: pulse 5s infinite;
-      z-index: 1;
-    }
+    .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b') no-repeat center center/cover; text-align: center; padding: 2rem; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%); animation: pulse 5s infinite; z-index: 1; }
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.4;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-      }
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.1); opacity: 0.7; }
     }
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      color: #eac34f;
-    }
-    .hero p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #f0f0f0;
-    }
-    .section {
-      padding: 4rem 2rem;
-    }
-    .section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #eac34f;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .service {
-      flex: 1 1 300px;
-      padding: 2rem;
-      background: #222;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s ease;
-    }
-    .service:hover {
-      background: #333;
-    }
-    .service i {
-      font-size: 2.5rem;
-      color: #eac34f;
-      margin-bottom: 1rem;
-    }
-    .contact {
-      background: #1a1a1a;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    .contact h2 {
-      color: #eac34f;
-    }
-    .contact a {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #fff;
-      background: #eac34f;
-      padding: 1rem 2rem;
-      border-radius: 30px;
-      text-decoration: none;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-top: 2px solid gold;
-    }
-    footer {
-      padding: 1rem;
-      background: #111;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-    }
+    .hero h1, .hero p { position: relative; z-index: 2; }
+    .hero h1 { font-size: 4rem; color: #eac34f; }
+    .hero p { margin-top: 1rem; font-size: 1.2rem; color: #f0f0f0; }
+    .hero a { position: relative; z-index: 2; margin-top: 2rem; display: inline-block; padding: 1rem 2rem; background: #eac34f; color: #111; font-weight: bold; border-radius: 30px; text-decoration: none; transition: 0.3s; }
+    .hero a:hover { background: #ffdb60; }
+    .section { padding: 4rem 2rem; }
+    .section h2 { text-align: center; margin-bottom: 2rem; color: #eac34f; }
+    .services { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .service { flex: 1 1 300px; padding: 2rem; background: #222; border-radius: 10px; text-align: center; transition: 0.3s ease; }
+    .service:hover { background: #333; }
+    .service i { font-size: 2.5rem; color: #eac34f; margin-bottom: 1rem; }
+    .contact { background: #1a1a1a; text-align: center; padding: 4rem 2rem; }
+    .contact h2 { color: #eac34f; }
+    .contact a { display: inline-block; margin-top: 1rem; color: #fff; background: #eac34f; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; }
+    iframe { width: 100%; height: 600px; border: none; border-top: 2px solid gold; }
+    footer { padding: 1rem; background: #111; text-align: center; color: #888; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -205,12 +70,13 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" data-aos="fade-in">
     <h1>The Origin of Trusted Gold</h1>
     <p>A Synergy Spheres 3.0 sub-brand, bridging verified buyers with global gold suppliers.</p>
+    <a href="#contact">Get In Touch</a>
   </section>
 
-  <section class="section" id="about">
+  <section class="section" id="about" data-aos="fade-up">
     <h2>About Aurgin</h2>
     <p style="max-width: 800px; margin: auto; text-align: center; color: #bbb;">
       Aurgin is a global gold sourcing and brokerage brand, operating under the Synergy Spheres 3.0 umbrella.
@@ -219,20 +85,20 @@
     </p>
   </section>
 
-  <section class="section" id="services">
+  <section class="section" id="services" data-aos="fade-up">
     <h2>Our Services</h2>
     <div class="services">
-      <div class="service">
+      <div class="service" data-aos="zoom-in">
         <i class="fas fa-coins"></i>
         <h3>Gold Brokering</h3>
         <p>We connect serious buyers with bulk suppliers through trusted networks, under verified mandates.</p>
       </div>
-      <div class="service">
+      <div class="service" data-aos="zoom-in" data-aos-delay="100">
         <i class="fas fa-ship"></i>
         <h3>CIF Logistics</h3>
         <p>We assist in coordinating cost, insurance & freight shipments directly to Dubai.</p>
       </div>
-      <div class="service">
+      <div class="service" data-aos="zoom-in" data-aos-delay="200">
         <i class="fas fa-user-shield"></i>
         <h3>KYC & Vetting</h3>
         <p>Every deal is backed by verified buyer proof of funds and validated supplier documents.</p>
@@ -240,12 +106,11 @@
     </div>
   </section>
 
-  <!-- 3D Animation Section -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <iframe src="https://my.spline.design/futuristicwebsiteanimation-17e710d9f7fd6ebff3e0b021d2a9b412/" frameborder="0" allowfullscreen></iframe>
   </section>
 
-  <section class="contact" id="contact">
+  <section class="contact" id="contact" data-aos="fade-up">
     <h2>Connect With Us</h2>
     <p>Email: abdulbasitnoor23@gmail.com</p>
     <p>WhatsApp: +92 307 9920337</p>
@@ -264,6 +129,11 @@
       const nav = document.querySelector('nav');
       menuToggle.addEventListener('click', () => {
         nav.classList.toggle('active');
+      });
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+        });
       });
     });
   </script>
