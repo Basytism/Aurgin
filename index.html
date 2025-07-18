@@ -4,9 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aurgin – Synergy Gold Network</title>
+
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Aurgin is a Synergy Spheres 3.0 brand connecting certified buyers with verified gold suppliers. CIF Dubai. LBMA compliant. Trusted global sourcing.">
+  <meta property="og:title" content="Aurgin – Synergy Gold Network">
+  <meta property="og:description" content="Trusted gold brokering through Synergy Spheres 3.0.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b">
+  <meta property="og:url" content="https://aurgin.gold">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://aurgin.gold/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;600&display=swap" rel="stylesheet">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -33,6 +49,9 @@
       font-weight: 600;
       color: #eac34f;
     }
+    nav {
+      display: flex;
+    }
     nav a {
       margin: 0 1rem;
       text-decoration: none;
@@ -42,6 +61,32 @@
     nav a:hover {
       color: #fff;
     }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #eac34f;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 80px;
+        right: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     .hero {
       height: 100vh;
       display: flex;
@@ -61,6 +106,7 @@
       font-size: 1.2rem;
       color: #f0f0f0;
     }
+
     .section {
       padding: 4rem 2rem;
     }
@@ -69,6 +115,7 @@
       margin-bottom: 2rem;
       color: #eac34f;
     }
+
     .services {
       display: flex;
       flex-wrap: wrap;
@@ -91,6 +138,7 @@
       color: #eac34f;
       margin-bottom: 1rem;
     }
+
     .contact {
       background: #1a1a1a;
       text-align: center;
@@ -108,6 +156,7 @@
       border-radius: 30px;
       text-decoration: none;
     }
+
     footer {
       padding: 1rem;
       background: #111;
@@ -120,6 +169,7 @@
 <body>
   <header>
     <div class="logo">Aurgin</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -134,7 +184,11 @@
 
   <section class="section" id="about">
     <h2>About Aurgin</h2>
-    <p style="max-width: 800px; margin: auto; text-align: center; color: #bbb;">Aurgin is a global gold sourcing and brokerage brand, operating under the Synergy Spheres 3.0 umbrella. We specialize in connecting certified buyers with verified gold suppliers (CIF Dubai, LBMA, Dore Bars). We work on a commission basis with full transparency and compliance.</p>
+    <p style="max-width: 800px; margin: auto; text-align: center; color: #bbb;">
+      Aurgin is a global gold sourcing and brokerage brand, operating under the Synergy Spheres 3.0 umbrella.
+      We specialize in connecting certified buyers with verified gold suppliers (CIF Dubai, LBMA, Dore Bars).
+      We work on a commission basis with full transparency and compliance.
+    </p>
   </section>
 
   <section class="section" id="services">
@@ -160,13 +214,23 @@
 
   <section class="contact" id="contact">
     <h2>Connect With Us</h2>
-    <p>Email: connect@aurgin.gold</p>
-    <p>WhatsApp: +971-XXX-XXXXXX</p>
-    <a href="mailto:connect@aurgin.gold">Email Us Now</a>
+    <p>Email: abdulbasitnoor23@gmail.com</p>
+    <p>WhatsApp: +92 307 9920337</p>
+    <a href="mailto:abdulbasitnoor23@gmail.com">Email Us Now</a>
   </section>
 
   <footer>
     © 2025 Aurgin – A Synergy Spheres 3.0 Brand. All rights reserved.
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
